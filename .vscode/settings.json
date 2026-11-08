@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "colegio/src"
+    ],
+    "java.project.outputPath": "colegio/build/classes",
+    "java.configuration.updateBuildConfiguration": "automatic"
+}

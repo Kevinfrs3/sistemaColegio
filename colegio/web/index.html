@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#edf1f3">
+    <title>Aula | Gestión escolar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="scene-effects" aria-hidden="true">
+        <div class="rain-layer"></div>
+        <div class="bubble-layer">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <main id="login-screen" class="login-screen">
+        <section class="login-card">
+            <div class="brand-mark" aria-hidden="true">S</div>
+            <p class="eyebrow">PLATAFORMA ESCOLAR</p>
+            <h1>Bienvenido a Aula</h1>
+            <p class="muted">Ingresa para consultar tu espacio escolar.</p>
+            <form id="login-form" class="form-stack">
+                <label for="login-user">Usuario</label>
+                <div class="login-input-wrap user-input-wrap">
+                    <input id="login-user" name="username" autocomplete="username"
+                           placeholder="Escribe tu usuario" required>
+                </div>
+                <label for="login-password">Contraseña</label>
+                <div class="login-input-wrap password-input-wrap">
+                    <input id="login-password" name="password" type="password"
+                           autocomplete="current-password" placeholder="Escribe tu contraseña" required>
+                    <button id="toggle-login-password" class="password-toggle" type="button"
+                            aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button>
+                </div>
+                <p id="login-error" class="form-error" role="alert"></p>
+                <button class="button button-primary button-wide" type="submit">Iniciar sesión</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="app-screen" class="app-shell" hidden>
+        <aside class="sidebar">
+            <a class="brand" href="#" aria-label="Aula, inicio">
+                <span class="brand-mark brand-mark-small">A</span>
+                <span>Aula<span class="brand-period">.</span></span>
+            </a>
+            <div class="workspace-label">ESPACIO ESCOLAR</div>
+            <nav id="main-nav" class="main-nav" aria-label="Menú principal"></nav>
+            <div class="sidebar-bottom">
+                <div class="profile-chip">
+                    <span id="profile-avatar" class="avatar">A</span>
+                    <span class="profile-copy">
+                        <strong id="profile-name">Administrador</strong>
+                        <small id="profile-role">Administrador</small>
+                    </span>
+                </div>
+                <button id="logout-button" class="logout-button" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-area">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow" id="page-eyebrow">PANEL</p>
+                    <h1 id="page-title">Resumen</h1>
+                </div>
+                <div class="topbar-right">
+                    <span class="status-dot"></span>
+                    <span id="current-date"></span>
+                </div>
+            </header>
+            <section id="page-content" class="page-content" aria-live="polite"></section>
+        </main>
+    </div>
+
+    <dialog id="app-dialog" class="app-dialog">
+        <form id="dialog-form" method="dialog">
+            <div class="dialog-heading">
+                <div>
+                    <p class="eyebrow">AULA</p>
+                    <h2 id="dialog-title"></h2>
+                </div>
+                <button class="icon-button" data-dialog-close aria-label="Cerrar" type="button">×</button>
+            </div>
+            <div id="dialog-fields" class="dialog-fields"></div>
+            <p id="dialog-error" class="form-error" role="alert"></p>
+            <div class="dialog-actions">
+                <button class="button button-secondary" data-dialog-close type="button">Cancelar</button>
+                <button id="dialog-save" class="button button-primary" value="save" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -13,57 +13,57 @@ import java.util.List;
  */
 public class consultacurso {
 
-    public static List<curso> listacurso = new ArrayList<>();
+    public static final List<curso> listacurso = new ArrayList<>();
 
     public boolean agregarcurso(int codigo, String nombre) {
-
-        curso curso0 = new curso();
-        curso0.setCodigo(codigo);
-        curso0.setNombre(nombre);
-        listacurso.add(curso0);
+        if (codigo <= 0 || nombre == null || nombre.isBlank() || buscarCurso(codigo) != null) {
+            return false;
+        }
+        curso nuevoCurso = new curso();
+        nuevoCurso.setCodigo(codigo);
+        nuevoCurso.setNombre(nombre.trim());
+        listacurso.add(nuevoCurso);
         return true;
     }
 
     public boolean editarcurso(int codigo, String nombre) {
-        curso curso0 = null;
-        int indice = -1;
-        for (int i = 1; i < listacurso.size(); i++) {
-            if (listacurso.get(i).getCodigo() == codigo) {
-                curso0 = listacurso.get(i);
-                indice = i;
-            }
-        }
-        if (curso0 != null) {
-            curso0.setCodigo(codigo);
-            curso0.setNombre(nombre);
-            listacurso.set(indice, curso0);
-            return true;
-        } else {
+        curso cursoExistente = buscarCurso(codigo);
+        if (cursoExistente == null || nombre == null || nombre.isBlank()) {
             return false;
         }
+        cursoExistente.setNombre(nombre.trim());
+        return true;
     }
 
     public boolean eliminarcurso(int codigo) {
-        for (int i = 0; i < listacurso.size(); i++) {
-            if (listacurso.get(i).getCodigo() == codigo) {
-                listacurso.remove(i);
+        for (curso cursoExistente : listacurso) {
+            if (cursoExistente.getCodigo() == codigo) {
+                listacurso.remove(cursoExistente);
                 return true;
             }
         }
         return false;
     }
-    
-    public List<curso>consularlistacurso(){
-        return listacurso;
-    }
-    
-    public curso consulacursocodigo(int codigo, String nombre){
-        for (int i=0;i<listacurso.size();i++){
-            if(listacurso.get(i).getCodigo()==codigo){
-                return listacurso.get(i);
+
+    public curso buscarCurso(int codigo) {
+        for (curso cursoExistente : listacurso) {
+            if (cursoExistente.getCodigo() == codigo) {
+                return cursoExistente;
             }
         }
         return null;
+    }
+
+    public List<curso> consultarListaCurso() {
+        return new ArrayList<>(listacurso);
+    }
+
+    public List<curso> consularlistacurso() {
+        return consultarListaCurso();
+    }
+
+    public curso consulacursocodigo(int codigo, String nombre) {
+        return buscarCurso(codigo);
     }
 
 }

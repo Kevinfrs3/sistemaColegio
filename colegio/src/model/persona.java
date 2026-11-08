@@ -15,12 +15,20 @@ public class persona {
     private String apellido;
     private int edad;
 
-    public String getIdnetificar() {
+    public String getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdnetificar(String idnetificar) {
-        this.identificacion = idnetificar;
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    public String getIdnetificar() {
+        return getIdentificacion();
+    }
+
+    public void setIdnetificar(String identificacion) {
+        setIdentificacion(identificacion);
     }
 
     public String getNombre() {

@@ -1,0 +1,467 @@
+# VS Code Policy Diagnostics
+
+*WARNING: This file may contain sensitive information.*
+
+## Summary
+
+| Diagnostic | Result |
+| --- | --- |
+| Account policy gate | inactive |
+| Managed-settings sources | None \(no managed settings active\) |
+| Effective managed settings | 0 keys |
+| Managed-settings issues | 0 issues |
+| Agent Runtime | 1 provider, 0 failed |
+| Chat harness enforcement | Not enforced |
+| Policy-controlled settings | 1 applied, 72 not applied |
+
+## System Information
+
+| Property | Value |
+| --- | --- |
+| Generated | 2026-11-07T15:28:22.746Z |
+| Product | Visual Studio Code 1.145.2 |
+| Commit | c4453f8ea430795f941c1b2ff6c9321135a74a02 |
+
+## Account Information
+
+### Default Account Summary
+
+| Property | Value |
+| --- | --- |
+| Account ID/Username | 113454897 |
+| Account Label | Kevinfrs3 |
+
+<details>
+<summary>Detailed account properties</summary>
+
+| Property | Value |
+| --- | --- |
+| authenticationProvider | \{"id":"github","name":"GitHub","enterprise":false\} |
+| accountName | Kevinfrs3 |
+| sessionId | \*\*\* |
+| enterprise | false |
+| entitlementsData | \{"id":113454897,"login":"Kevinfrs3","access\_type\_sku":"free\_limited\_copilot","analytics\_tracking\_id":"ab4448524287d0b5abecc8860af2ce87","assigned\_date":"2026-11-07T09:43:24-05:00","can\_signup\_for\_limited":false,"chat\_enabled":true,"cli\_enabled":true,"copilotignore\_enabled":false,"copilot\_plan":"individual","editor\_preview\_features\_enabled":true,"is\_mcp\_enabled":true,"is\_staff":false,"enterprise\_list":\[\],"organization\_login\_list":\[\],"organization\_list":\[\],"restricted\_telemetry":true,"cli\_remote\_control\_enabled":true,"copilot\_app\_enabled":true,"cloud\_sessions\_enabled":false,"cloud\_session\_storage\_enabled":false,"endpoints":\{"api":"https://api.individual.githubcopilot.com","origin-tracker":"https://origin-tracker.individual.githubcopilot.com","proxy":"https://proxy.individual.githubcopilot.com","telemetry":"https://telemetry.individual.githubcopilot.com","exp":"https://exp.individual.githubcopilot.com"\},"can\_upgrade\_plan":true,"enterprise\_usage\_telemetry":false,"te":true,"quota\_snapshots":\{"chat":\{"overage\_count":0,"overage\_permitted":false,"percent\_remaining":96.2,"quota\_id":"chat","quota\_remaining":192.4,"unlimited":false,"timestamp\_utc":"2026-11-07T07:21:09.474-08:00","has\_quota":true,"quota\_reset\_at":0,"token\_based\_billing":true,"credits\_used":7,"remaining":192,"entitlement":200\},"completions":\{"overage\_count":0,"overage\_permitted":false,"percent\_remaining":100,"quota\_id":"completions","quota\_remaining":2000,"unlimited":false,"timestamp\_utc":"2026-11-07T07:21:09.474-08:00","has\_quota":true,"quota\_reset\_at":0,"token\_based\_billing":true,"credits\_used":0,"remaining":2000,"entitlement":2000\},"premium\_interactions":\{"overage\_count":0,"overage\_permitted":false,"percent\_remaining":0,"quota\_id":"premium\_interactions","quota\_remaining":0,"unlimited":false,"timestamp\_utc":"2026-11-07T07:21:09.474-08:00","has\_quota":false,"quota\_reset\_at":0,"token\_based\_billing":true,"credits\_used":0,"remaining":0,"entitlement":0\}\},"token\_based\_billing":true,"quota\_reset\_date":"2026-12-01","quota\_reset\_date\_utc":"2026-12-01T00:00:00.000Z"\} |
+| policyData | \{"cloud\_session\_storage\_enabled":false,"chat\_agent\_enabled":true,"chat\_preview\_features\_enabled":true,"mcp":true\} |
+
+</details>
+
+## Account Policy Gate
+
+| Property | Value |
+| --- | --- |
+| State | inactive |
+| Reason | n/a |
+| ChatApprovedAccountOrganizations | not set |
+
+**Legend**
+
+- `inactive`: gate disabled (no approved orgs configured) — policies behave as account data dictates.
+- `satisfied`: gate active and approved — account policy values flow normally.
+- `restricted`: gate active and not satisfied — opted-in policies forced to their restricted value.
+  - `noAccount`: no default account signed in.
+  - `wrongProvider`: signed in with a non-GitHub provider.
+  - `orgNotApproved`: signed in but account is not a member of any approved organization.
+  - `policyNotResolved`: signed in to an approved org but account-side policy data has not yet been fetched.
+
+## Managed Settings
+
+| Property | Value |
+| --- | --- |
+| Active sources \(precedence order\) | None \(no managed settings active\) |
+| Supplied keys | 0 |
+| Selected telemetry block | None |
+| Effective VS Code policy keys | 0 |
+
+*Precedence is native MDM, then server, then file. Most settings resolve per key, filling gaps from lower channels. Telemetry selects one whole block: omitted leaves never inherit from weaker blocks. Empty or unknown-only server/file objects still select a block; native MDM exposes only declared flat keys. The internal telemetry presence marker is not a policy setting. For sandbox.enabled, any managed true wins regardless of channel precedence, matching the runtime sandbox floor.*
+
+### Effective Resolution
+
+*The selected sources supply no managed-settings leaves.*
+
+<details>
+<summary>Merged normalized bag</summary>
+
+```json
+{}
+```
+
+</details>
+
+<details>
+<summary>Effective VS Code policy bag</summary>
+
+```json
+{}
+```
+
+</details>
+
+### Normalization and Parse Issues (0)
+
+*None.*
+
+### Delivery Channel Details
+
+#### Native MDM
+
+| Property | Value |
+| --- | --- |
+| Available | yes |
+| Contributes winning keys | no |
+
+*The native policy watcher exposes only declared scalar keys, so its source values are already definition-scoped and canonical.*
+
+<details>
+<summary>Source, normalized, and VS Code projection</summary>
+
+**Source values \(definition-scoped\)**
+
+```json
+{}
+```
+
+**Normalized bag**
+
+```json
+{}
+```
+
+**VS Code policy projection**
+
+```json
+{}
+```
+
+</details>
+
+#### GitHub Server API
+
+| Property | Value |
+| --- | --- |
+| Endpoint | /copilot\_internal/managed\_settings |
+| Last fetch | never |
+| Freshness | notRequired |
+| Freshness source | none |
+| Last freshness attempt | never |
+| Freshness failure | none |
+| Freshness scope | none |
+| Client identity | client\_id=vscode&amp;client\_version=1.145.2&amp;copilot\_runtime\_version=1.0.103-unstable.r41379698026.g3219c66 |
+| Compatibility | compatible or not evaluated |
+| Contributes winning keys | no |
+
+<details>
+<summary>Source, normalized, and VS Code projection</summary>
+
+**Raw response \(last successful fetch\)**
+
+*No successful managed-settings response has been captured.*
+
+**Normalized bag**
+
+```json
+{}
+```
+
+**VS Code policy projection**
+
+```json
+{}
+```
+
+</details>
+
+#### File (managed-settings.json)
+
+| Property | Value |
+| --- | --- |
+| Available | yes |
+| Contributes winning keys | no |
+
+<details>
+<summary>Source, normalized, and VS Code projection</summary>
+
+**Raw parsed file**
+
+```json
+{}
+```
+
+**Normalized bag**
+
+```json
+{}
+```
+
+**VS Code policy projection**
+
+```json
+{}
+```
+
+</details>
+
+<details>
+<summary>VS Code managed-settings schema</summary>
+
+*Only keys declared here can reach VS Code policy callbacks. Runtime-owned keys may still be enforced by the Copilot runtime even when absent from the projections above.*
+
+```json
+{
+  "vscode.temporaryAllowLocalHarness": {
+    "type": "boolean"
+  },
+  "telemetry.enabled": {
+    "type": "boolean"
+  },
+  "telemetry.filePath": {
+    "type": "string"
+  },
+  "telemetry.protocol": {
+    "type": "string"
+  },
+  "telemetry.endpoint": {
+    "type": "string"
+  },
+  "telemetry.captureContent": {
+    "type": "boolean"
+  },
+  "telemetry.lockCaptureContent": {
+    "type": "boolean"
+  },
+  "permissions.defaultMode": {
+    "type": "string"
+  },
+  "permissions.disableAssistedPermissionsMode": {
+    "type": "boolean"
+  },
+  "permissions.disableBypassPermissionsMode": {
+    "type": "string"
+  },
+  "permissions.model": {
+    "type": "string"
+  },
+  "model": {
+    "type": "string"
+  },
+  "enabledPlugins": {
+    "type": "string"
+  },
+  "vscode.temporaryDefaultToLocalHarness": {
+    "type": "boolean"
+  },
+  "telemetry.capture.identity": {
+    "type": "boolean"
+  },
+  "telemetry.serviceName": {
+    "type": "string"
+  },
+  "telemetry.resourceAttributes": {
+    "type": "string"
+  },
+  "telemetry.headers": {
+    "type": "string"
+  },
+  "allowedMcpServers": {
+    "type": "string"
+  },
+  "deniedMcpServers": {
+    "type": "string"
+  },
+  "allowManagedMcpServersOnly": {
+    "type": "boolean"
+  },
+  "extraKnownMarketplaces": {
+    "type": "string"
+  },
+  "strictPluginOnlyCustomization": {
+    "type": "boolean"
+  },
+  "allowManagedHooksOnly": {
+    "type": "boolean"
+  }
+}
+```
+
+</details>
+
+### Agent Runtime Resolution
+
+*Resolved independently by each provider through its own SDK/runtime. This may include runtime-owned keys that VS Code does not declare as configuration policies.*
+
+*Copilot resolves device and account policy without creating a session. This does not include session-specific client contributions or execute policy helpers. Inspect the snapshot diagnostics for source failures or cached-policy warnings; a returned snapshot is not proof of a successful live fetch.*
+
+#### copilotcli
+
+<details>
+<summary>Resolved settings snapshot</summary>
+
+```json
+{
+  "source": "none",
+  "serverManaged": false,
+  "deviceManaged": false,
+  "clientManaged": false,
+  "policyHelperManaged": false,
+  "failClosed": false,
+  "sandboxEnabledByUndeterminedPolicy": false,
+  "bypassPermissionsDisabled": false,
+  "managedKeys": [],
+  "account": "d61c6e064c119768ad68235a0b0360af25a48d1370f5ae26d938f0eb95a94203",
+  "layers": [
+    {
+      "source": "device"
+    },
+    {
+      "source": "server"
+    }
+  ],
+  "diagnostics": []
+}
+```
+
+</details>
+
+## Policy-Controlled Settings
+
+### Applied Policy
+
+| Setting Key | Policy Name | Policy Source | Catalog support \(all sources\) | Listed in readiness |
+| --- | --- | --- | --- | --- |
+| chat.sessionSync.enabled | CopilotSessionSync | Account | enforced | No |
+
+<details>
+<summary>Applied policy values and configuration details</summary>
+
+**chat.sessionSync.enabled**
+
+| Property | Value |
+| --- | --- |
+| Policy name | CopilotSessionSync |
+| Policy source | Account |
+| Managed settings | n/a |
+| Default value | false |
+| Current value | false |
+| Policy value | false |
+
+</details>
+
+<details>
+<summary>Non-applied policy inventory (not current enforcement gaps)</summary>
+
+| Setting Key | Policy Name |
+| --- | --- |
+| agents.voice.enabled | AgentsVoice |
+| extensions.allowed | AllowedExtensions |
+| workbench.browser.enableChatTools | BrowserChatTools |
+| chat.agent.sandbox.network.allowedDomains | ChatAgentAllowedNetworkDomains |
+| chat.agent.sandbox.network.deniedDomains | ChatAgentDeniedNetworkDomains |
+| chat.extensionTools.enabled | ChatAgentExtensionTools |
+| chat.agentHost.customTerminalTool.enabled | ChatAgentHostCustomTerminalTool |
+| chat.agentHost.githubEnvironments.enabled | ChatAgentHostGitHubEnvironments |
+| chat.agent.enabled | ChatAgentMode |
+| chat.agent.networkFilter | ChatAgentNetworkFilter |
+| chat.agent.sandbox.network.allowNetwork | ChatAgentSandboxAllowNetwork |
+| chat.agent.sandbox.allowUnsandboxedCommands | ChatAgentSandboxAllowUnsandboxedCommands |
+| chat.agent.sandbox.enabled | ChatAgentSandboxEnabled |
+| chat.mcp.allowedServers | ChatAllowedMcpServers |
+| chat.hooks.allowManagedOnly | ChatAllowManagedHooksOnly |
+| chat.mcp.allowManagedServersOnly | ChatAllowManagedMcpServersOnly |
+| chat.approvedAccountOrganizations | ChatApprovedAccountOrganizations |
+| chat.canvases.enabled | ChatCanvases |
+| chat.customizations.copilotConnectors.enabled | ChatCopilotConnectors |
+| chat.customizations.marketplace.enabled | ChatCustomizationMarketplace |
+| chat.defaultConfiguration | ChatDefaultConfiguration |
+| chat.defaultModel | ChatDefaultModel |
+| chat.mcp.deniedServers | ChatDeniedMcpServers |
+| chat.editor.preferCopilotHarness | ChatEditorPreferCopilotHarness |
+| chat.plugins.enabledPlugins | ChatEnabledPlugins |
+| chat.plugins.extraMarketplaces | ChatExtraMarketplaces |
+| chat.useHooks | ChatHooks |
+| chat.mcp.access | ChatMCP |
+| chat.plugins.enabled | ChatPluginsEnabled |
+| chat.customizations.strictPluginOnlyCustomization | ChatStrictPluginOnlyCustomization |
+| chat.temporaryDefaultToLocalHarness | ChatTemporaryDefaultToLocalHarness |
+| chat.tools.global.autoApprove | ChatToolsAutoApprove |
+| chat.tools.eligibleForAutoApproval | ChatToolsEligibleForAutoApproval |
+| chat.tools.terminal.enableAutoApprove | ChatToolsTerminalEnableAutoApprove |
+| chat.agentHost.claudeAgent.enabled | Claude3PIntegration |
+| chat.agentHost.codexAgent.enabled | Codex3PIntegration |
+| chat.copilotCliCommand.enabled | CopilotCliCommand |
+| github.copilot.nextEditSuggestions.enabled | CopilotNextEditSuggestions |
+| chat.agentHost.otel.captureContent | CopilotOtelCaptureContent |
+| github.copilot.chat.otel.captureContent | CopilotOtelCaptureContent |
+| chat.agentHost.otel.captureIdentity | CopilotOtelCaptureIdentity |
+| github.copilot.chat.otel.captureIdentity | CopilotOtelCaptureIdentity |
+| chat.agentHost.otel.enabled | CopilotOtelEnabled |
+| github.copilot.chat.otel.enabled | CopilotOtelEnabled |
+| chat.agentHost.otel.otlpEndpoint | CopilotOtelEndpoint |
+| github.copilot.chat.otel.otlpEndpoint | CopilotOtelEndpoint |
+| chat.agentHost.otel.headers | CopilotOtelHeaders |
+| github.copilot.chat.otel.headers | CopilotOtelHeaders |
+| chat.agentHost.otel.otlpProtocol | CopilotOtelOtlpProtocol |
+| github.copilot.chat.otel.protocol | CopilotOtelOtlpProtocol |
+| chat.agentHost.otel.outfile | CopilotOtelOutfile |
+| github.copilot.chat.otel.outfile | CopilotOtelOutfile |
+| chat.agentHost.otel.exporterType | CopilotOtelProtocol |
+| github.copilot.chat.otel.exporterType | CopilotOtelProtocol |
+| chat.agentHost.otel.resourceAttributes | CopilotOtelResourceAttributes |
+| github.copilot.chat.otel.resourceAttributes | CopilotOtelResourceAttributes |
+| chat.agentHost.otel.serviceName | CopilotOtelServiceName |
+| github.copilot.chat.otel.serviceName | CopilotOtelServiceName |
+| github.copilot.chat.reviewAgent.enabled | CopilotReviewAgent |
+| github.copilot.chat.reviewSelection.enabled | CopilotReviewSelection |
+| dictation.enabled | DictationEnabled |
+| dictation.experimental.llmCleanup | DictationLLMCleanup |
+| dictation.model | DictationModel |
+| telemetry.feedback.enabled | EnableFeedback |
+| extensions.gallery.authProvider | ExtensionGalleryAuthProvider |
+| extensions.gallery.serviceUrl | ExtensionGalleryServiceUrl |
+| extensions.autoUpdate | ExtensionsAutoUpdate |
+| extensions.autoUpdateDelay | ExtensionsAutoUpdateDelay |
+| mcp.enterpriseManagedAuth.idp | McpEnterpriseManagedAuthIdp |
+| chat.mcp.gallery.serviceUrl | McpGalleryServiceUrl |
+| telemetry.telemetryLevel | TelemetryLevel |
+| update.mode | UpdateMode |
+
+</details>
+
+## Chat Harness Enforcement
+
+**Effective decision:** Not enforced.
+
+## Authentication Information
+
+### Authentication Providers
+
+| Provider ID | Sessions | Accounts |
+| --- | --- | --- |
+| github | 1 | Kevinfrs3 |
+| github-enterprise | 0 | None |
+| microsoft | 0 | None |
+| \_\_GitHub.copilot-chat | 0 | None |
+
+<details>
+<summary>Detailed session information</summary>
+
+**github**
+
+| Account | Scopes | Extensions with Access |
+| --- | --- | --- |
+| Kevinfrs3 | read:user, user:email, repo, workflow | vscode.github \(trusted\), github.remotehub \(trusted\), ms-vscode.remote-server \(trusted\), github.vscode-pull-request-github \(trusted\), github.codespaces \(trusted\), github.copilot \(trusted\), github.copilot-chat \(trusted\), ms-vsliveshare.vsliveshare \(trusted\), ms-azuretools.vscode-azure-github-copilot \(trusted\) |
+
+</details>
+
+## Agent Host Policy Readiness
+
+Only requirements from your currently applied enterprise policies are shown here. Unconfigured policies and known permissive values are excluded. This check covers Copilot Agent Host on this machine, not remote hosts, Claude, or Codex.
+
+No known unsupported requirements were found in the applied VS Code policies. This does not establish full runtime policy parity; user settings and unprojected runtime managed settings are outside this check.
+
+### Rollout and harness selection
+
+These findings are report-only: they do not hold users on Local, change experiment enrollment or harness selection, block messages, or add Chat banners. Existing rollout, preferences, explicit choices, and sessions are unchanged. Opening this report has no effect on selection. Supported bridge restrictions remain enforced.
+
+No enterprise-required Agent Host sandbox is active.
+
+ChatEditorPreferCopilotHarness controls chat.editor.preferCopilotHarness: enabling it prefers Copilot when a new chat would otherwise use Local. It is a preference, not a harness lock; disabling it does not require Local or prohibit explicit or remembered Copilot choices. Existing sessions and the enterprise-required sandbox behavior are unchanged. Requiring a particular harness needs a separate enforcement contract, not an inference from this readiness report.
+
